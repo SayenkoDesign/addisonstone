@@ -1,0 +1,57 @@
+// Testimonials
+
+
+.section-testimonials {
+    
+    margin-bottom: 45px;
+    
+    header {
+        text-align: center;   
+    }
+
+    .royalSlider {
+        padding: 0 50px;
+        
+        max-width: 840px;
+        margin: 0 auto;
+        text-align: center;
+           
+    }
+    
+    .rsDefault .rsArrowLeft .rsArrowIcn {	
+        left: 0;
+        
+        @include breakpoint(large) {
+            left: -100px;
+        }
+    }
+    
+    .rsDefault .rsArrowRight .rsArrowIcn {	
+        right: 0;
+        
+        @include breakpoint(large) {
+            right: -100px;
+        }
+    }
+    
+    
+    blockquote {
+        border: none;
+        
+        h4 {
+            text-transform: none;
+            font-weight: 300; 
+            margin-top: 40px;  
+            margin-bottom: 30px;
+        }
+                
+        @include breakpoint(large) {
+            p {
+                font-size: 15px;  
+                font-family: Montserrat; 
+                line-height: 21px;  
+            }
+        }
+    }
+    
+}

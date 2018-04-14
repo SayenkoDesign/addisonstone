@@ -1,0 +1,146 @@
+//
+// Footer
+// --------------------------------------------------
+
+.footer-widgets {
+    background-color: $blue;
+    border-top: 7px solid $green;
+    position: relative;
+    z-index: 2;
+    margin-top: 50px;
+    padding: 45px 0 0;
+   
+    
+    .wrap {
+        position: relative;
+        z-index: 2; 
+    }
+    
+    .widget {
+        
+        padding: 0 0 24px 0;
+        text-align: center;   
+        
+        @include breakpoint(large) {
+            padding: 0; 
+            text-align: left;  
+        }
+        
+        a[href*="tel"] {
+            font-family: Montserrat;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 22px;
+        }
+        
+        * {
+            color: #EFF3F1; 
+            font-family: Montserrat;
+            font-weight: 300;
+        }
+        
+        .widget-title {
+            font-family: Montserrat;
+            font-size: 16px;
+            line-height: 22px;
+            text-transform:: uppercase;   
+        }
+    }
+    
+    .widget.widget_media_image {
+        text-align: center;
+        
+        &:not(:last-child) {
+            margin-bottom: 30px;   
+        }
+    }
+    
+    
+    p,
+    li {
+        font-size: 14px;
+        line-height: 20px;   
+        margin-bottom: 20px;        
+    }
+    
+    p {
+        &:last-child {
+            margin-bottom: 0;   
+        }
+    }
+    
+    .menu {
+        li {
+            
+            display: block;
+            margin: 0;
+            
+            a {
+                font-size: 16px;
+                line-height: 22px;
+                padding: 5px 0;   
+            }
+        }
+    }
+    
+    
+    .column:not(:last-child) .widget .widget-title {
+        display: none;
+    }
+    
+    @include breakpoint(large) {
+        
+        .column:first-child,
+        .column:last-child {
+            margin-top: 30px;
+        }
+        
+        .column:last-child {
+            text-align: right;
+            
+            .widget {
+                display: inline-block; 
+                text-align: left;  
+            }
+        }
+    }
+    
+}
+
+
+
+
+
+
+.site-footer {
+    background-color: $blue;
+    
+    .wrap {
+        padding: 0 0 20px;   
+    }
+    
+    hr {
+        max-width: 130px;
+        margin-left: auto;
+        margin-right: auto;
+        border-color: $light-blue;   
+    }
+    
+    p {
+        color: #EFF3F1;
+        font-size: 11px;
+        line-height: 15px;
+        
+        span {
+             display: block;
+             margin-bottom: 5px;
+        }
+        
+        a {
+            color: $light-blue;   
+        }
+
+    }
+      
+}
+

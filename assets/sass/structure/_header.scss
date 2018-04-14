@@ -1,0 +1,128 @@
+/*
+Header
+---------------------------------------------- */
+
+// Fix for sticky header
+.logged-in .site-header.fixed {
+    top: 46px;
+
+    @media screen and (min-width: 783px) {
+        top: 32px;
+    }      
+ }
+
+
+.site-header {
+     
+    background: #fff;
+    width: 100%;
+    z-index: 999;
+        
+    .wrap {
+          
+         .columns {
+            position: relative;   
+            
+        }
+        
+        .site-branding {
+            text-align: center;
+            
+            @include breakpoint(large) {
+                text-align: left;   
+            }
+        }
+                
+        .site-title {
+            
+            display: inline-block;
+            
+            padding: 14px 40px;
+            
+            
+            @include breakpoint(medium) {
+                padding-left: rem-calc(map-get($grid-column-gutter, medium) /2 );  
+            }
+            
+            @include breakpoint(large) {
+                padding-left: 0;  
+                padding-right: 0; 
+                
+                
+            }
+            
+            a {
+                display: block;   
+            }
+        }
+                         
+    }
+                  
+    .mobile-phone {
+        position: absolute;
+        top: 24px;
+        left: rem-calc(map-get($grid-column-gutter, small) /2 );  
+        z-index: 999;   
+    }
+    
+    .menu-toggle {
+        position: absolute;
+        top: 24px;
+        right: rem-calc(map-get($grid-column-gutter, small) /2 );  
+        z-index: 999;
+        
+        @include breakpoint(medium) {
+            right: rem-calc(map-get($grid-column-gutter, medium) /2 );  
+        }
+    }
+    
+    
+
+    
+}
+
+.site-header {
+
+	&.fixed {
+		display: none;
+		
+		@media #{$xlarge-up} {
+      		display: block;
+		}
+		
+		transition: transform .25s ease-in-out;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		z-index: 999;
+		transform: translateY(-150%);
+		background-color: white;
+		box-shadow: 0px 1px 4px #888888;	
+        
+        .wrap {
+            position: relative;
+            top: auto;   
+        }
+        
+        .widget_text {
+            
+            .widget-title {
+                color: $blue;
+            }
+            
+            > div {
+                a {
+                    color: $blue; 
+                }
+            }
+            
+        }
+
+	}
+
+	&.fixed.fixed-show {
+		transform: translateY(0);
+	}
+}

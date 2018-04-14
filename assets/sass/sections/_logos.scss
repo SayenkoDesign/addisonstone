@@ -1,0 +1,64 @@
+// Section Logos
+
+.section-curved + .section-logos {
+    header {
+        @include breakpoint(xxlarge) {
+            margin-top: -100px;     
+        }
+        @include breakpoint(xxxlarge) {
+            margin-top: -115px;     
+        }
+    }
+}
+
+.section-logos {
+         
+    header {
+      $size: 25px;
+      text-align: center;     
+      
+      span {
+          max-width: calc( 100% - ( #{$size} *2 ) );
+          display: inline-block;
+          padding: 0;
+          position: relative;
+          &:after,
+          &:before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            transform: translateY(-50%);
+            margin-top: -5px;
+            display: block;
+            width: 0px;
+            height: 0px;
+            border: $size solid $light-blue;
+            border-right: $size/3 solid transparent;
+          }
+          &:before {
+            left: -$size*1.2;
+            transform: translateY(-50%) rotate(180deg);
+          }
+          &:after {
+            right: -$size*1.2;
+          }
+      }
+      
+      h2 {
+        color: $white; 
+        background: $light-blue; 
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 30px;
+        text-transform: none;
+        padding: 10px 10px 8px; 
+        min-height: 50px;
+      }
+           
+    }
+    
+    .grid .column {
+        text-align: center;   
+    }
+    
+}
