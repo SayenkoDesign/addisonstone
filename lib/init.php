@@ -46,15 +46,17 @@
     
     //include_once( 'functions/videos.php' );
     
-    include_once( 'functions/blog.php' );
+    // include_once( 'functions/blog.php' );
     
 	include_once( 'functions/gravity-forms.php' );
 
 	include_once( 'functions/widgets.php' );
 
-    include_once( 'functions/addtoany.php' );
+    // include_once( 'functions/addtoany.php' );
     
-    include_once( 'functions/facetwp.php' );
+    // include_once( 'functions/facetwp.php' );
+    
+    include_once( 'functions/case-study.php' );
 
 /****************************************
 	include_onces (Foundation)
@@ -74,8 +76,10 @@ include_once( 'foundation/class-foundation-grid.php' );
 /****************************************
 	Post Types
 *****************************************/
+    include_once( 'post-types/cpt-page-faq.php' );
     include_once( 'post-types/cpt-case-study.php' );
-    include_once( 'post-types/cpt-faq.php' );
     include_once( 'post-types/cpt-team.php' );
     include_once( 'post-types/cpt-testimonial.php' );
     include_once( 'post-types/cpt-treatment.php' );
+    include_once( 'post-types/cpt-faq.php' );
+    include_once( 'post-types/cpt-glossary.php' );

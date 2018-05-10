@@ -50,12 +50,16 @@ if( ! class_exists( 'Footer_CTA_Section' ) ) {
             $button->add_render_attribute( 'wrapper', 'class', 'green' ); 
             $button = $button->get_element();
             
+            if( !empty( $button ) ) {
+                $button = sprintf( '<p>%s</p>', $button );
+            }
+            
             $phone = '';
             if( !empty( $fields['phone'] ) ) {
                 $phone_number = _s_format_telephone_url( $fields['phone'] );
                 $phone = sprintf( '<a href="%s">%s</a>', $phone_number, $fields['phone'] );
+                $phone = sprintf( '<p>%s</p>', $phone );
             }
-            
                
             return sprintf( '<div class="row column">%s%s</div>', $button, $phone );
         }

@@ -1,0 +1,167 @@
+// Team
+
+
+// special heading
+.section-curved + .section-team {
+    .header {
+        
+        position: relative;
+        z-index: 3;
+        
+        @include breakpoint(xxlarge) {
+            margin-top: -100px;     
+        }
+        @include breakpoint(xxxlarge) {
+            margin-top: -115px;     
+        }
+    }
+}
+
+.section-team {
+        
+    .column-block {
+        margin-bottom: rem-calc(25);   
+    }
+    
+    .shape {
+        display: none;   
+    }
+    
+    
+    
+    .header {
+      $size: 25px;
+      text-align: center;     
+      
+      span {
+          max-width: calc( 100% - ( #{$size} *2 ) );
+          display: inline-block;
+          padding: 0;
+          position: relative;
+          &:after,
+          &:before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            transform: translateY(-50%);
+            margin-top: -5px;
+            display: block;
+            width: 0px;
+            height: 0px;
+            border: $size solid $light-blue;
+            border-right: $size/3 solid transparent;
+          }
+          &:before {
+            left: -$size*1.2;
+            transform: translateY(-50%) rotate(180deg);
+          }
+          &:after {
+            right: -$size*1.2;
+          }
+      }
+      
+      h2 {
+        color: $white; 
+        background: $light-blue; 
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 30px;
+        text-transform: none;
+        padding: 10px 10px 8px; 
+        min-height: 50px;
+        
+        @include breakpoint( medium ) {
+            min-width: 375px;   
+        }
+      }
+           
+    }
+    
+    
+    .header-member {
+     
+        text-align: center;
+        margin-bottom: 15px;
+     
+        @include breakpoint( large ) {
+            text-align: left;
+            
+            h3,
+            .social-icons {
+                display: inline-block;   
+                vertical-align: middle;
+            }
+            
+            h3 {
+                margin-bottom: 0;
+            }
+            
+            .social-icons {
+                margin-left: 20px;   
+            }
+        }
+        
+    }
+    
+    .element-photo {
+        max-width: 320px;
+        margin: 0 auto $global-margin;   
+    }
+    
+    .logos {
+        max-width: 175px;
+        margin: 0 auto $global-margin;
+        
+        span, a {
+            display: block;
+            margin-top: $global-margin;   
+        }
+    }
+    
+    &:nth-child(odd) {
+                
+        @include breakpoint(large) {
+    
+            .column-block {
+                margin-bottom: 0;   
+            }
+            
+            .column:not(.row):first-child {
+                padding-right: rem-calc(map-get($grid-column-gutter, large)*1);  
+            }
+            
+            .column:not(.row):last-child {
+                padding-left: rem-calc(map-get($grid-column-gutter, large)*1);  
+            }
+        }
+    }
+    
+    &:nth-child(even) {
+        
+        .shape {
+            display: block;   
+        }
+        
+        .wrap {
+            background-color: $light-gray; 
+            padding: 25px 0;  
+        }
+        
+        @include breakpoint(large) {
+    
+            .column-block {
+                margin-bottom: 0;   
+            }
+            
+            .column:not(.row):last-child {
+                padding-right: rem-calc(map-get($grid-column-gutter, large)*1);  
+            }
+            
+            .column:not(.row):first-child {
+                padding-left: rem-calc(map-get($grid-column-gutter, large)*1);  
+            }
+        }
+    }
+    
+    
+}

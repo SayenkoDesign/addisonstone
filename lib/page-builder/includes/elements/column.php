@@ -55,20 +55,21 @@ class Element_Column extends Element_Base {
 		$this->add_render_attribute(
 			'wrapper', 'class', [
 				'column',
+                'column-block',
                 $this->get_name() . '-' . $id
 			]
 		);
-        
+                
         
         // Generate column classes
         $count = self::$count;
         
         $column_width = $this->get_settings( 'column_widths' );
                                 
-        $width = 6; // 50/50 default
+        $width = 12;
         
         if( isset( $column_width ) && !empty( $column_width ) ) {
-            $width = (  absint( $column_width ) / 100 ) * 12; 
+            $width = $this->convert_to_columns( $column_width ); 
         }   
                 
         $this->add_render_attribute( 'wrapper', 'class', sprintf( 'small-12 large-%s', $width ) );        
@@ -106,5 +107,11 @@ class Element_Column extends Element_Base {
         // Add default settings
         //$this->set_fields( array( 'class' => 'button', 'is_external' => '', 'nofollow' => '' ) );
 	}
+    
+    private function convert_to_columns( $fraction )
+    {
+        $numbers = explode( '/', $fraction );
+        return round( ( $numbers[0] / $numbers[1] ) * 12 );
+    }
     	
 }

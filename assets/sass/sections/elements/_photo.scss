@@ -1,0 +1,19 @@
+// Element Photo
+
+.element-photo {
+    
+    &.circle {
+        img {
+            border-radius: 100%;
+            box-shadow: 0 0 5px 0px rgba(0, 0, 0, .5);   
+        }
+        
+        .image-caption {
+            text-align: center;
+        }
+    }
+    
+    .image-caption {
+        margin: 10px auto $global-margin;
+    }
+}

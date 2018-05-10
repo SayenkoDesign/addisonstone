@@ -1,7 +1,7 @@
 <?php
 
 /*
-Testimonials
+Logos
 		
 */    
     
@@ -61,11 +61,23 @@ if( ! class_exists( 'Logos_Section' ) ) {
             }
                         
             foreach( $rows as $row ) {
-                $image = wp_get_attachment_image( $row['ID'], 'medium' );
-                $columns .= sprintf( '<div class="column column-block"><span>%s</span></div>', $image );                
+                $attachment_id = $row['image'];
+                $url = $row['url'];
+                $image = wp_get_attachment_image( $attachment_id, 'medium' );
+                $tag = 'span';
+                if( !empty( $url ) ) {
+                    $tag = 'a';
+                    $this->add_render_attribute( 'anchor', 'href', $url, true );
+                }
+                $columns .= sprintf( '<div class="column column-block"><%1$s %2$s>%3$s</%1$s></div>', 
+                                    $tag, 
+                                    $this->get_render_attribute_string( 'anchor' ), 
+                                    $image );                
             }       
                
-            return sprintf( '<div class="row column">%s<div class="row small-up-1 medium-up-2 large-up-4 align-middle grid">%s</div></div>', $heading, $columns );
+            return sprintf( '<div class="row column">%s<div class="row small-up-1 medium-up-2 large-up-4 align-middle align-center grid">%s</div></div>', 
+                            $heading, 
+                            $columns );
         }
     }
 }

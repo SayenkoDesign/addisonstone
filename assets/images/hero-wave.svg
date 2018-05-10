@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" enable-background="new 0 0 1440 29" version="1.1" viewBox="0 0 1440 29" xml:space="preserve">
+  <defs>
+    <path id="a" d="M0 0h1440v29H0z"/>
+  </defs>
+  <clipPath id="b">
+    <use overflow="visible" xlink:href="#a"/>
+  </clipPath>
+  <g clip-path="url(#b)" transform="matrix(-1 0 0 -1 1731 36)">
+    <path fill="#91B55E" d="M662 17c465 17 797 11 1074-10 53-4 53 3 0 21H233c11-17 154-21 429-11z"/>
+    <path fill="#5FA4DA" d="M235 9c469 27 328 3 681 9 234 4 508 6 821 6v12H235C-78 0-78-9 235 9z"/>
+  </g>
+</svg>

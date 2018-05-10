@@ -4,6 +4,19 @@ function get_svg( $type = '' ) {
 	
 	$svgs = array(  
     
+        'wave' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 29">
+          <defs>
+            <path id="a" d="M0 0h1440v29H0z"/>
+          </defs>
+          <clipPath id="b">
+            <use overflow="visible" xlink:href="#a"/>
+          </clipPath>
+          <g clip-path="url(#b)" transform="matrix(-1 0 0 -1 1731 36)">
+            <path fill="#91B55E" d="M662 17c465 17 797 11 1074-10 53-4 53 3 0 21H233c11-17 154-21 429-11z"/>
+            <path fill="#5FA4DA" d="M235 9c469 27 328 3 681 9 234 4 508 6 821 6v12H235C-78 0-78-9 235 9z"/>
+          </g>
+        </svg>',
+    
         'curve-top' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 49">
           <path fill="#eff3f1" fill-rule="evenodd" d="M1440 25V0c-355 29-595 44-720 44S355 29 0 0v49h1440z" transform=""/>
         </svg>',
@@ -18,12 +31,48 @@ function get_svg( $type = '' ) {
         'phone-mobile' => '<svg width="38" height="38" xmlns="http://www.w3.org/2000/svg"><path d="M38 29.407v1.718c-.516 3.797-4.293 6.81-8.975 6.874-3.353.046-7.312-1.772-10.502-3.437C9.884 30.054 1.879 20.365 0 10.312V8.021C1.128 3.675 2.848-.08 8.402 0c1.325 1.278 1.91 2.678 2.864 4.392.692 1.243 2.545 3.586 2.483 4.774-.145 2.78-4.582 3.229-4.774 5.537-.108 1.301 1.719 3.667 2.482 4.774.971 1.408 2.15 2.925 3.247 4.01 1.226 1.213 6.583 5.81 8.783 5.537 2.045-.255 2.963-4.65 5.347-4.774.998-.052 3.143 1.49 4.583 2.291 1.88 1.047 3.676 2.106 4.583 2.865" fill="#335D94" fill-rule="evenodd"/></svg>',
                 
         'arrow' => '<svg xmlns="http://www.w3.org/2000/svg" width="25" height="43">
-  <g id="Mockups" fill="none" fill-rule="evenodd">
-    <g id="arrow" fill="#B3ADAD" transform="translate(-1192 -3149)">
-      <g id="next-copy-2" transform="translate(1192 3149)">
-        <path id="Right-Arrow" d="M.777 42.26c.505.484 1.196.74 1.86.74.664 0 1.354-.256 1.858-.74L24.23 23.29c.504-.484.77-1.122.77-1.787 0-.663-.266-1.301-.77-1.787L4.495.747a2.687 2.687 0 0 0-3.718 0 2.443 2.443 0 0 0 0 3.574l17.875 17.182L.777 38.686c-1.009.996-1.009 2.604 0 3.574z"/>
-      </g>
-    </g>
+          <g id="Mockups" fill="none" fill-rule="evenodd">
+            <g id="arrow" fill="#B3ADAD" transform="translate(-1192 -3149)">
+              <g id="next-copy-2" transform="translate(1192 3149)">
+                <path id="Right-Arrow" d="M.777 42.26c.505.484 1.196.74 1.86.74.664 0 1.354-.256 1.858-.74L24.23 23.29c.504-.484.77-1.122.77-1.787 0-.663-.266-1.301-.77-1.787L4.495.747a2.687 2.687 0 0 0-3.718 0 2.443 2.443 0 0 0 0 3.574l17.875 17.182L.777 38.686c-1.009.996-1.009 2.604 0 3.574z"/>
+              </g>
+            </g>
+          </g>
+        </svg>',
+        
+        'arrow-left' => '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 46 46">
+  <desc>
+    Created with Sketch.
+  </desc>
+  <defs>
+    <path id="a" d="M0 0v46h46V0H0z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" transform="translate(-230.000000, -230.000000) translate(230.000000, 230.000000) translate(23.000000, 23.000000) rotate(-180.000000) translate(-23.000000, -23.000000)">
+    <mask id="b" fill="white">
+      <use xlink:href="#a"/>
+    </mask>
+    <g/>
+    <path fill="#335D94" d="M23 46a23 23 0 1 0 0-46 23 23 0 0 0 0 46zm0-44a21 21 0 1 1 0 42 21 21 0 0 1 0-42z" mask="url(#b)"/>
+    <path fill="#5FA4DA" d="M26 30a1 1 0 0 0 1 0l7-7a1 1 0 0 0 0-1l-7-7h-1v1l6 7-6 6v1z"/>
+    <path stroke="#5FA4DA" stroke-linecap="square" stroke-width="3" d="M31 23H13"/>
+  </g>
+</svg>',
+        
+        'arrow-right' => '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 46 46">
+  <desc>
+    Created with Sketch.
+  </desc>
+  <defs>
+    <path id="a" d="M0 0v46h46V0H0z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" transform="translate(-1163.000000, -230.000000) translate(230.000000, 230.000000) translate(933.000000, 0.000000)">
+    <mask id="b" fill="white">
+      <use xlink:href="#a"/>
+    </mask>
+    <g/>
+    <path fill="#335D94" d="M23 46a23 23 0 1 0 0-46 23 23 0 0 0 0 46zm0-44a21 21 0 1 1 0 42 21 21 0 0 1 0-42z" mask="url(#b)"/>
+    <path fill="#5FA4DA" d="M26 30a1 1 0 0 0 1 0l7-7a1 1 0 0 0 0-1l-7-7h-1v1l6 7-6 6v1z"/>
+    <path stroke="#5FA4DA" stroke-linecap="square" stroke-width="3" d="M31 23H13"/>
   </g>
 </svg>',
         
@@ -45,6 +94,7 @@ function get_svg( $type = '' ) {
         
         'youtube' => '<svg viewBox="0 0 512 512"><path d="M422.6 193.6c-5.3-45.3-23.3-51.6-59-54 -50.8-3.5-164.3-3.5-215.1 0 -35.7 2.4-53.7 8.7-59 54 -4 33.6-4 91.1 0 124.8 5.3 45.3 23.3 51.6 59 54 50.9 3.5 164.3 3.5 215.1 0 35.7-2.4 53.7-8.7 59-54C426.6 284.8 426.6 227.3 422.6 193.6zM222.2 303.4v-94.6l90.7 47.3L222.2 303.4z"/><span class="screen-reader-text">youtube icon</span></svg>',
 	 
+        'email' => '<svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"></path></svg>'
 	);
 	
 	if( isset( $svgs[$type] ) ) {

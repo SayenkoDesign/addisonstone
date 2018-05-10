@@ -35,7 +35,7 @@ class Element_Button extends Element_Base {
 	public function render() {
                                 
 		$fields = $this->get_fields();
-                                                        
+                                                                
         if ( ! isset( $fields['button'] ) || empty( $fields['button'] ) ) {
             return;
         }
@@ -48,6 +48,8 @@ class Element_Button extends Element_Base {
         
         if( 'Button' == $button['button_type'] ) {
             $this->add_render_attribute( 'wrapper', 'class', 'button' ); 
+            $this->add_render_attribute( 'wrapper', 'class', 'blue' ); 
+            $this->add_render_attribute( 'wrapper', 'class', 'arrow' ); 
         }
         else {
             $this->add_render_attribute( 'wrapper', 'class', 'button-link' ); 

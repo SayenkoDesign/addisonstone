@@ -38,6 +38,18 @@ if( ! class_exists( 'Hero_Section' ) ) {
             );
         }
         
+        public function before_render() {
+            $this->add_render_attribute( 'wrap', 'class', 'wrap' ); 
+            return sprintf( '<section %s><div %s>', $this->get_render_attribute_string( 'wrapper' ), $this->get_render_attribute_string( 'wrap' ) );
+        }
+        
+        public function after_render() {
+        
+            $wave = sprintf( '<div class="wave">%s</div>', '' );
+                
+            return sprintf( '</div>%s</section>', $wave );
+        }
+        
         // Add content
         public function render() {
             
@@ -49,8 +61,16 @@ if( ! class_exists( 'Hero_Section' ) ) {
                 $fields['heading'] = get_the_title();
             }
             
-            $header = new Element_Header( ['fields' => $fields ] );  
-            $header = $header->get_element();  
+            //$header = new Element_Header( ['fields' => $fields ] );  
+            //$header = $header->get_element();  
+            
+            $heading        = _s_format_string( $this->get_fields( 'heading' ), 'h1' );
+            $subheading     = '';
+            if( !empty( $this->get_fields( 'subheading' ) ) ) {
+                $subheading = _s_format_string( sprintf( '<strong>%s</strong>', _s_wrap_string( $this->get_fields( 'subheading' ) ) ), 'h1' );
+            }
+            
+            $description    = _s_format_string( $this->get_fields( 'description' ), 'p' );
             
             $background_image       = $this->get_fields( 'background_image' );
             $background_position_x  = $this->get_fields( 'background_position_x' );
@@ -59,19 +79,21 @@ if( ! class_exists( 'Hero_Section' ) ) {
             
             if( ! empty( $background_image ) ) {
                 $background_image = _s_get_acf_image( $background_image, 'hero', true );
-                $this->add_render_attribute( 'wrapper', 'style', sprintf( 'background-image: url(%s);', $background_image ) );
+                $this->add_render_attribute( 'wrapper', 'class', 'hero-background' );
                 
-                $this->add_render_attribute( 'wrapper', 'style', sprintf( 'background-image: url(%s);', $background_image ) );
-                $this->add_render_attribute( 'wrapper', 'style', sprintf( 'background-position: %s %s;', 
+                $this->add_render_attribute( 'wrap', 'style', sprintf( 'background-image: url(%s);', $background_image ) );
+                
+                $this->add_render_attribute( 'wrap', 'style', sprintf( 'background-image: url(%s);', $background_image ) );
+                $this->add_render_attribute( 'wrap', 'style', sprintf( 'background-position: %s %s;', 
                                                                           $background_position_x, $background_position_y ) );
                 
                 if( true == $background_overlay ) {
-                     $this->add_render_attribute( 'wrapper', 'class', 'background-overlay' ); 
+                     $this->add_render_attribute( 'wrap', 'class', 'background-overlay' ); 
                 }
                                                                           
             }              
                
-            return sprintf( '<div class="row column">%s</div>', $header );
+            return sprintf( '<div class="row align-middle"><div class="column"><div class="caption">%s%s%s</div></div></div>', $heading, $subheading, $description );
         }
     }
 }

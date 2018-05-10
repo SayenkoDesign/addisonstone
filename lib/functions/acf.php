@@ -68,7 +68,7 @@ function _s_get_acf_option( $name = '' ) {
 }
 
 
-function _s_get_acf_image( $attachment_id, $size = 'large', $background = FALSE ) {
+function _s_get_acf_image( $attachment_id, $size = 'large', $background = FALSE, $class = array() ) {
 
 	if( ! absint( $attachment_id ) )
 		return FALSE;
@@ -82,7 +82,7 @@ function _s_get_acf_image( $attachment_id, $size = 'large', $background = FALSE 
 		return $background[0];
 	}
 
-	return wp_get_attachment_image( $attachment_id, $size );
+	return wp_get_attachment_image( $attachment_id, $size, '', $class );
 
 }
 

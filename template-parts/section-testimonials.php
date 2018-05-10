@@ -65,8 +65,26 @@ if( ! class_exists( 'Testimonial_Section' ) ) {
                 
                 $cite = $row->post_title;
                 
+                $url = get_field( 'url', $row->ID );
+                
                 if( !empty( $cite ) ) {
-                    $cite = _s_format_string( $row->post_title, 'h4' );
+                    
+                    $tag = 'span';
+                    if( !empty( $url ) ) {
+                        $tag = 'a';
+                        $this->add_render_attribute( 'anchor', 'href', $url, true );
+                        $this->add_render_attribute( 'anchor', 'class', 'button-link', true );
+                    }
+                    else {
+                        $this->add_render_attribute( 'anchor', 'href', '', true );
+                        $this->add_render_attribute( 'anchor', 'class', '', true );   
+                    }
+                    $cite = sprintf( '<%1$s %2$s>%3$s</%1$s>', 
+                                     $tag, 
+                                     $this->get_render_attribute_string( 'anchor' ), 
+                                     $cite );
+                                     
+                    $cite =  _s_format_string( $cite, 'h4' );
                 }
                 
                 $blockquote = sprintf( '<blockquote>%s%s</blockquote>', apply_filters( 'pb_the_content', $row->post_content ), $cite );

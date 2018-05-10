@@ -6,7 +6,7 @@
 	var slider_opts = {
 		transitionType: 'move',
 		controlNavigation:'bullets',
-        controlsInside: false,
+        controlsInside: true,
         navigateByClick: false,
 		imageScaleMode: 'fill',
 		imageAlignCenter:false,
@@ -38,6 +38,7 @@
 		transitionType: 'move',
 		controlNavigation:'none',
 		imageAlignCenter:false,
+        navigateByClick: false,
 		arrowsNav: true,
 		arrowsNavAutoHide: false,
 		sliderTouch: false,

@@ -1,5 +1,7 @@
 // Section Logos
 
+
+// special heading
 .section-curved + .section-logos {
     header {
         @include breakpoint(xxlarge) {
@@ -53,12 +55,19 @@
         text-transform: none;
         padding: 10px 10px 8px; 
         min-height: 50px;
+       
       }
            
     }
     
     .grid .column {
-        text-align: center;   
+        text-align: center;  
+        
+        span,
+        a {
+            display: block;
+            padding: 10px;   
+        }
     }
     
 }

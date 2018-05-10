@@ -25,8 +25,8 @@ class CPT_FAQ extends CPT_Core {
 				self::POST_TYPE // Registered name/slug
 			),
 			array( 
-				'public'              => true,
-				'publicly_queryable'  => true,
+				'public'              => false,
+				'publicly_queryable'  => false,
 				'show_ui'             => true,
 				'query_var'           => true,
 				'capability_type'     => 'post',
@@ -37,7 +37,7 @@ class CPT_FAQ extends CPT_Core {
 				'show_in_nav_menus'   => false,
 				'exclude_from_search' => true,
 				//'rewrite'             => array( 'slug' => 'faqs' ),
-				'supports' => array( 'title', 'revisions' ),
+				'supports' => array( 'title', 'editor', 'revisions' ),
 			)
 
         );
@@ -47,3 +47,18 @@ class CPT_FAQ extends CPT_Core {
 }
 
 new CPT_FAQ();
+
+
+$cpt_faq_categories = array(
+    __( 'Case Study Category', CPT_FAQ::TEXTDOMAIN ), // Singular
+    __( 'Case Study Categories', CPT_FAQ::TEXTDOMAIN ), // Plural
+    'faq_cat' // Registered name
+);
+
+register_via_taxonomy_core( $cpt_faq_categories, 
+	array(
+		//'public' => false,
+        'rewrite' => false,
+	), 
+	array( CPT_FAQ::POST_TYPE ) 
+);

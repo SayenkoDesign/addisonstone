@@ -52,14 +52,6 @@ class Element_Photo extends Element_Base {
                 
         $this->add_render_attribute( 'wrapper', 'class', 'element-photo' );
         
-        if( isset( $photo['shape'] ) && $photo['shape'] ) {
-            // Let's double check that width and height match
-            $image_meta = wp_get_attachment_metadata( $photo['image'] );
-            if( $image_meta['width'] + $image_meta['height'] > 2399 ) {
-                $this->add_render_attribute( 'wrapper', 'class', 'circle' );
-            }
-        }
-        
         // Add caption
         $caption = $this->get_caption( $photo );
                                                 
@@ -79,9 +71,15 @@ class Element_Photo extends Element_Base {
 
     private function get_size( $photo ) {
         // Top/Center/Bottom
-        if( isset( $photo['shape'] ) && $photo['shape'] ) {
+        if( isset( $photo['shape'] ) ) {
             $shape = strtolower( $photo['shape'] );
             $crop = ( 'circle' == $shape ) ? '-' . strtolower( $photo['crop'] ) : '';
+            
+            $image_meta = wp_get_attachment_metadata( $photo['image'] );
+            
+            if( ( 'circle' == $shape ) && $image_meta['width'] - $image_meta['height'] == 0 ) {
+                $this->add_render_attribute( 'wrapper', 'class', 'circle' );
+            }
         }
         
         return 'large' . $crop;

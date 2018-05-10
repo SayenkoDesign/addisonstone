@@ -1074,11 +1074,24 @@ function(a,b){e===b&&d()});a.ev.on("rsAfterContentSet.rsAutoHeight",function(a,b
 
     });
     
-    
-    
-    $(document).on('facetwp-loaded', function() {
-        new Foundation.Equalizer($('#posts-grid'));
-     });
+    if( $('.masonry-layout').size() ) {
+        var $grid = $('.masonry-layout').isotope({
+          itemSelector: '.grid-item',
+          percentPosition: true,
+          masonry: {
+            // use outer width of grid-sizer for columnWidth
+            columnWidth: '.grid-sizer'
+          }
+        });
+        
+        // filter items on button click
+        $('.filter-button-group').on( 'click', 'button', function() {
+            $('.filter-button-group button').removeClass("active");
+            $(this).addClass("active");  
+            var filterValue = $(this).attr('data-filter');
+            $grid.isotope({ filter: filterValue });
+        });
+    }
     
 }(document, window, jQuery));
 
@@ -1153,7 +1166,7 @@ function(a,b){e===b&&d()});a.ev.on("rsAfterContentSet.rsAutoHeight",function(a,b
 	var slider_opts = {
 		transitionType: 'move',
 		controlNavigation:'bullets',
-        controlsInside: false,
+        controlsInside: true,
         navigateByClick: false,
 		imageScaleMode: 'fill',
 		imageAlignCenter:false,
@@ -1185,6 +1198,7 @@ function(a,b){e===b&&d()});a.ev.on("rsAfterContentSet.rsAutoHeight",function(a,b
 		transitionType: 'move',
 		controlNavigation:'none',
 		imageAlignCenter:false,
+        navigateByClick: false,
 		arrowsNav: true,
 		arrowsNavAutoHide: false,
 		sliderTouch: false,

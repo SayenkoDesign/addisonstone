@@ -85,7 +85,7 @@ $header-styles: (
   small: (
     'h1': ('font-size': 36, 'line-height': 1.2 ),
     'h2': ('font-size': 24, 'line-height': 1.4),
-    'h3': ('font-size': 20, 'line-height': 1.6 ),
+    'h3': ('font-size': 22, 'line-height': 1.6 ),
     'h4': ('font-size': 19, 'line-height': 1.5 ),
     'h5': ('font-size': 15, 'line-height': 1.2),
     'h6': ('font-size': 15, 'line-height': 1.2),
@@ -111,11 +111,13 @@ $anchor-color-hover: $light-blue;
 
 
 
-$accordionmenu-arrows: false;
+$accordion-item-background-hover: #fff;
+$accordion-content-background: #ececec;
+$accordion-content-border: 1px solid #D7D5D5;
 
-$tab-background: transparent;
+$tab-background: #ffffff;
 $tab-content-background: transparent;
-$tab-background-active: transparent;
+$tab-background-active: #ffffff;
 $tab-item-font-size: 16px;
 $tab-item-padding: 20px;
 $tab-content-padding: 20px;

@@ -81,7 +81,7 @@
                         <div class="site-title">
                         <?php
                         $site_url = home_url();
-                        $logo = sprintf('<img src="%slogo.svg" width="151px" height="40px" class="show-for-large" />', trailingslashit( THEME_IMG ) );
+                        $logo = sprintf('<img src="%slogo.png" class="show-for-large" />', trailingslashit( THEME_IMG ) );
                         $logomark = sprintf('<img src="%slogo-mark.svg" width="48px" height="56px" class="hide-for-large" />', trailingslashit( THEME_IMG ) );
                         printf('<a href="%s" title="%s">%s%s</a>',
                                 $site_url, get_bloginfo( 'name' ), $logo, $logomark );

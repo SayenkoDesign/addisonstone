@@ -24,9 +24,15 @@ section {
             
             .wrap {
                 background-color: $light-gray; 
-                padding: 25px 0;  
+                padding: 45px 0;  
             }
         }
+    }
+    
+    &.min-width {
+        //max-width: 920px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .shape {

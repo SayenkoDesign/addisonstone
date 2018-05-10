@@ -2,139 +2,135 @@
 
 .section-hero {
     
-    padding-top: 0;
+    background-color: $blue;
+    margin-top: 0;
     
-    .royalSlider {
-        min-height: 200px;   
+    .wrap {
+        padding: 32px 0;   
     }
- 
-    .caption {
-        z-index: 9; 
-        position: absolute;
-        bottom: rem-calc(map-get($grid-column-gutter, small)/2);
-        left: rem-calc(map-get($grid-column-gutter, small)/2);
         
-        @include breakpoint(medium) {
-            max-width: 40%;
-        }
-  
-        @include breakpoint(large) {
-            left: 5%;
-            top: 50%;
-            bottom: auto;
-            transform: translateY(-50%);
-            max-width: 50%;
+    &.hero-background {
+        .wrap {
+            background-size: cover;
+            min-height: 300px;
+            padding: 75px 0;  
+            text-align: center; 
+            position: relative;        
         }
         
-        * {
-            color: #fff;   
-        }
-        
-        
-        
-        @include breakpoint(large down) {
-            h1 {
-                //font-size: (map-deep-get($header-styles, small, h1, font-size) * .8) + px;   
-                //font-size: 30px;
-                margin-bottom: 0;
-            }
-            
-            p {
-                display: none;   
-            }
-        }
-        
-        h1 {
-            margin-bottom: 10px;   
-        }
-        
-        @include breakpoint(large) { 
-            p {
-                font-size: 22px;
-                line-height: 30px;   
-            }
+        .caption {
+            margin: 0 auto;
+            max-width: 600px;   
         }
     }
     
-    a.plus {
-        margin-top: $global-margin;
+    .background-overlay {
         
-        @include breakpoint(large down) {
-            margin-top: 10px;
-            //transform: scale(0.7);
-            //transform-origin: top left;
+        &:after {
+            content: '';
+            background-color: rgba( $blue, 0.7);
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
         }
-    }
-    
-    
-    .controls {
         
-        position: absolute;
-        right: 5%;
-        bottom: 4%;
-        z-index: 98;   
-        
-        
-        > * {
-            display: inline-block!important;
+        .caption {
             position: relative;
-            left: auto;
-            right: auto;
-            top: auto;
-            bottom: auto;  
-            vertical-align: middle;
+            z-index: 3;   
         }
-        
-        .rsBullets {
-            text-align: left;
-            margin-top: 3px;
-            margin-right: 30px;
-            display: none!important;
-            
-            @include breakpoint(large) {
-                display: inline-block!important;
-            }
-        }
-        
-        .rsBullets, .rsLink{
-            width: auto;
-        }
-        
-        .rsArrow {
-            width: 21px;
-            height: 36px;
-            display: inline-block;  
-            margin: 0 10px; 
-        }
-    
-        .rsArrowIcn {
-            position: static;
-            left: auto;
-            right: auto;
-            top: auto;
-            bottom: auto;  
-            margin: 0;
-            padding: 0;
-            
-            &:before,
-            &:after {
-               left: auto;
-               right: auto; 
-               
-                width: 21px;
-                height: 36px;
-                line-height:36px;
-                background-size: 21px 36px;
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='36'%3E%3Cg id='Mockups' fill='none' fill-rule='evenodd'%3E%3Cg id='Home' fill='%23FFF' transform='translate%28-1280 -594%29'%3E%3Cg id='Group-7' transform='translate%281107 594%29'%3E%3Cg id='Group-6' transform='translate%28120%29'%3E%3Cpath id='Right-Arrow' d='M53.653 35.38a2.279 2.279 0 0 0 3.122 0L73.354 19.5A2.06 2.06 0 0 0 74 18.002c0-.555-.223-1.09-.647-1.497L56.776.626a2.262 2.262 0 0 0-3.123 0 2.04 2.04 0 0 0 0 2.992l15.015 14.385-15.015 14.385a2.078 2.078 0 0 0 0 2.992z'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            }
-        }
-                        
-        .rsBullets span:hover,
-        .rsArrow:hover {
-            opacity: .8;
-        }
-        
-    
     }
     
+    .wave {
+        display: none;
+        line-height: 0;   
+    }
+    
+    
+    
+    h1 {
+        color: #fff;
+        font-weight: 400;
+        margin-bottom: 0;
+        text-transform: none;
+    }
+    
+    p {
+        color: $light-gray;
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 0;
+        padding-top: 10px;
+    }
+}
+
+
+.home .section-hero {
+ 
+    .wrap {
+        background-size: cover;
+        min-height: 300px;
+        padding: 75px 0;  
+        text-align: right; 
+    }
+    
+    .wave {
+        display: block;
+        line-height: 0;   
+    }
+    
+    .caption {
+        display: inline-block;
+        max-width: 450px;   
+    }
+    
+    h1 {
+        color: #fff;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        
+        strong {
+            color: $light-gray;   
+        }
+        
+        span {
+            display: inline-block;
+            &:after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 3px;
+                background-color: $green;   
+            }
+        }
+    }
+    
+    p {
+        color: $light-gray;
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 0;
+        padding-top: 10px;
+    }
+       
+}
+
+
+:not(.home) .hero-background {
+    
+    .wrap {
+        min-height: inherit;  
+        padding-top: 55px; 
+    }
+    .row {
+        min-height: 200px;
+    }
+}
+
+
+:not(.home) .hero-background + .background-dark {
+    margin-top: -65px!important;  
+    position: relative;
+    z-index: 2; 
 }

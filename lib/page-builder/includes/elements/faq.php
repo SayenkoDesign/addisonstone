@@ -40,9 +40,9 @@ class Element_Faq extends Element_Base {
             return;
         }
         
-        $field = $fields['faq'];
-        
-        $heading = _s_format_string( $field['heading'], 'h2' );
+        $field = $this->get_fields( 'faq' );
+                
+        $heading = isset( $field['heading'] ) ? _s_format_string( $field['heading'], 'h2' ) : '';
         $faq     = $field['faq'];
         
         if( empty( $faq ) ) {

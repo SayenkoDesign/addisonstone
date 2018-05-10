@@ -2,6 +2,7 @@
 include_once( 'includes/functions/filters.php' );
 include_once( 'includes/functions/markup.php' );
 include_once( 'includes/functions/format.php' );
+include_once( 'includes/functions/theme.php' );
 
 include_once( 'includes/base/controls-stack.php' );
 include_once( 'includes/base/element-base.php' );

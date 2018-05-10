@@ -78,7 +78,14 @@ class Element_Section extends Element_Base {
             }
         }
         
-        return sprintf( '<%s %s>%s<div class="wrap">', esc_html( $this->get_html_tag() ), $this->get_render_attribute_string( 'wrapper' ), $curve );
+        $this->add_render_attribute( 'wrap', 'class', 'wrap' );
+        
+        return sprintf( '<%s %s>%s<div %s>', 
+                        esc_html( $this->get_html_tag() ), 
+                        $this->get_render_attribute_string( 'wrapper' ), 
+                        $curve,
+                        $this->get_render_attribute_string( 'wrap' )
+                        );
 	}
 
 	/**
@@ -139,11 +146,18 @@ class Element_Section extends Element_Base {
         
         // Process settings
         $settings = $this->get_settings();
+        
+        $wrap_padding = false;
+        
+        if( $this->get_settings( 'background_color' ) ) {
+            $wrap_padding = true;   
+        }
+        
         foreach( $settings as $name => $value ) {
         
             if( '' == $value ) {
                 continue;
-            }
+            }            
                             
             switch( $name ) {
                 case 'id':
@@ -157,10 +171,14 @@ class Element_Section extends Element_Base {
                 break;
                 case 'margin_top':
                 case 'margin_bottom':
+                $this->add_render_attribute( 'wrapper', 'style', sprintf( '%s:%spx;', $name, $value ) );
+                break;
                 case 'padding_top':
                 case 'padding_bottom':
                     $name = str_replace( '_', '-', $name );
-                    $this->add_render_attribute( 'wrapper', 'style', sprintf( '%s:%spx;', $name, $value ) );
+                    $tag = $wrap_padding ? 'wrap' : 'wrapper';
+                    $this->add_render_attribute( $tag, 'style', sprintf( '%s:%spx;', $name, $value ) );
+                    
                 break;                    
             }
             

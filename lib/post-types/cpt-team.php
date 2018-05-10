@@ -21,7 +21,7 @@ class CPT_Team extends CPT_Core {
         
         	array(
 				__( 'Team', self::TEXTDOMAIN ), // Singular
-				__( 'Teams', self::TEXTDOMAIN ), // Plural
+				__( 'Team', self::TEXTDOMAIN ), // Plural
 				self::POST_TYPE // Registered name/slug
 			),
 			array( 

@@ -74,8 +74,8 @@
     }  
 }
 
-@mixin button-padding( $top: 13px, $right: 16px, $bottom: 13px, $left: 16px ) {
-    padding: $top, $right, $bottom, $left;
+@mixin button-padding( $top: 11px, $right: 16px, $bottom: 11px, $left: 16px ) {
+    padding: $top $right $bottom $left;
 }
 
 
@@ -83,9 +83,27 @@
     @include button;
     
     &.blue {
-        @include button-background( $blue, $light-blue );
+        @include button-background( $blue, scale-color($blue, $lightness: 20%) );
         @include button-color();
         @include button-padding();
+        
+        &.arrow {
+            position: relative;
+            padding-right: 36px;
+				
+            &:before {
+                content:'';
+                right: 16px;
+                top: 50%;
+                position: absolute;
+
+                width: 14px;
+                height: 14px;
+                border: solid $green;
+                border-width: 0 2px 2px 0;
+                transform: translateY(-50%) rotate(-45deg);
+            }
+        }
     }
         
     &.green {
@@ -94,6 +112,29 @@
         @include button-padding();
     }
 
+}
+
+
+.button-link {
+    color: $light-blue;
+    display: inline-block;
+    font-family: Montserrat;
+    
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $blue;   
+    }
+    
+    &:hover {
+        color: scale-color($light-blue, -20% );
+        
+        &:after {
+            background-color: scale-color($blue, -20% );   
+        }
+    }
 }
 
 
@@ -113,68 +154,3 @@
     
 }
 
-
-
-a.learn-more,
-a.arrow,
-a.tel {
-    color: #0094D0;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    line-height: 18px;
-    text-align: center;
-    position: relative;
-    padding-right: 26px;
-    text-transform: uppercase;
-    text-decoration: none!important;
-    
-    &:before {
-        content: '';
-        display: block;
-        width: 20px;
-        height: 20px;
-        background: $blue;
-        border-radius: 50%;  
-        position: absolute;
-        right: 0;
-        top: -1px; 
-    }
-    
-    &:after {
-        content: ''; 
-        right: 8px;
-        top: 6px;
-        position: absolute;
-
-        width: 6px;
-        height: 6px;
-        border: solid $white;
-        border-width: 0 1px 1px 0;
-        transform: rotate(-45deg);  
-    }
-}
-
-div.plus,
-a.plus {
-    display: inline-block;
-    
-    min-width: 33px;
-    min-height: 33px;
-    
-    
-    color: #fff;
-    
-    span {
-        padding-left: 50px;  
-        @include plus; 
-        min-height: 40px;
-        font-size: 20px;
-        line-height: 34px;
-    }
-    
-    &:hover {
-        opacity: .8;   
-    }
-    
-}

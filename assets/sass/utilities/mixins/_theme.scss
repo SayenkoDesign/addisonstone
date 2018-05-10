@@ -41,44 +41,15 @@
     
     &:before {
         height: 3px;
-        width: 33px;
+        width: 30px;
         top: 15px;
-        left: 0;
+        left: 1.5px;
     }
     
     &:after {
-        height: 33px;
+        height: 30px;
         width: 3px;
-        top: 0;
+        top: 1.5px;
         left: 15px;
-    }
-}
-
-
-@mixin plus-small { 
-    display: inline-block;
-    position: relative; 
-    
-    &:before,
-    &:after {
-        content: '';
-        background: #fff;
-        position: absolute;
-        
-        
-    }
-    
-    &:before {
-        height: 2px;
-        width: 16px;
-        top: 8px;
-        left: 0;
-    }
-    
-    &:after {
-        height: 16px;
-        width: 2px;
-        top: 0;
-        left: 8px;
     }
 }

@@ -50,7 +50,7 @@ class Element_Slideshow extends Element_Base {
              $slides .= sprintf( '<div class="rsContent">%s</div>', $image );
         }
         
-        $slider = sprintf( '<div class="royalSlider rsCustom">%s</div>', $slides );
+        $slider = sprintf( '<div class="royalSlider rsDefault">%s</div>', $slides );
         
         $this->add_render_attribute( 'wrapper', 'class', 'element-slideshow' );
         $this->add_render_attribute( 'wrapper', 'class', 'clearfix' );

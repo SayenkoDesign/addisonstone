@@ -9,7 +9,6 @@ function _s_register_scripts() {
         
     // Isotopes
     wp_register_script( 'isotope', trailingslashit( THEME_JS ) . 'isotope.pkgd.min.js', array('jquery'), '', true );
-    wp_register_script( 'packery', trailingslashit( THEME_JS ) . 'packery-mode.pkgd.min.js', array('jquery' ), '', true );
             
 	// Project
  	wp_register_script( 'project' , trailingslashit( THEME_JS ) . 'project.js',
@@ -42,11 +41,15 @@ function _s_register_scripts() {
 add_action( 'wp_enqueue_scripts', '_s_load_scripts' );
 function _s_load_scripts() {
 
-		wp_enqueue_script( 'project' );
+		if( is_post_type_archive( 'case_study' ) || is_page_template( 'page-templates/faq' ) ) {
+            wp_enqueue_script( 'isotope');
+        }
+        
+        
+        wp_enqueue_script( 'project' );
 
 		if( is_front_page() ) {
  			wp_enqueue_script( 'front-page');
-            wp_enqueue_style( 'aos');
 		}
 }
 

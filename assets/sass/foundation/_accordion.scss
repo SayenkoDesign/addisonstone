@@ -11,7 +11,16 @@
 	.accordion-title {
 		display: block;
 		position: relative;
+        
+        h4 {
+            margin-bottom: 0;   
+        }
 	}
+}
+
+.accordion-title:before {
+    color: $green;
+    font-size: 24px;   
 }
 
 
