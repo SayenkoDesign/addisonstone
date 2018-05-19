@@ -116,9 +116,9 @@ function _s_widgets_init() {
 	$sidebars = array(
  		'primary'  => esc_html__( 'Primary', '_s' ),
         'header'  => esc_html__( 'Header', '_s' ),
-        'footer-1'  => esc_html__( 'Footer 1', '_s' ),
-        'footer-2'  => esc_html__( 'Footer 2', '_s' ),
-        'footer-3'  => esc_html__( 'Footer 3', '_s' ),
+        //'footer-1'  => esc_html__( 'Footer 1', '_s' ),
+        'footer-2'  => esc_html__( 'Footer Center', '_s' ),
+        'footer-3'  => esc_html__( 'Footer Right', '_s' ),
         //'footer-4'  => esc_html__( 'Footer 4', '_s' ),
 	);  
 
@@ -147,7 +147,7 @@ add_action( 'login_enqueue_scripts', '_s_login_stylesheet' );
 
 // changing the login logo
 function _s_login_logo() {
-	$logo = sprintf('%slogo.svg', trailingslashit( THEME_IMG ) );
+	$logo = sprintf('%slogo.png', trailingslashit( THEME_IMG ) );
 	printf( '<style type="text/css">h1 a { background-image:url(%s)!important; }</style>', $logo );
 }
 add_action('login_head', '_s_login_logo');

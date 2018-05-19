@@ -46,7 +46,11 @@ class Element_Button extends Element_Base {
 			$this->add_render_attribute( 'wrapper', 'href', $button['url'] );
 		}
         
-        if( 'Button' == $button['button_type'] ) {
+        if( 'cta' == $button['button_type'] ) {
+            $this->add_render_attribute( 'wrapper', 'class', 'button' ); 
+            $this->add_render_attribute( 'wrapper', 'class', 'green' ); 
+        
+        } else if( 'Button' == $button['button_type'] ) {
             $this->add_render_attribute( 'wrapper', 'class', 'button' ); 
             $this->add_render_attribute( 'wrapper', 'class', 'blue' ); 
             $this->add_render_attribute( 'wrapper', 'class', 'arrow' ); 

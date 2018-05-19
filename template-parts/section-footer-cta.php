@@ -44,6 +44,8 @@ if( ! class_exists( 'Footer_CTA_Section' ) ) {
             
             $fields = $this->get_fields();
             
+            $fields['button']['button_type'] = 'cta';
+            
             $settings = $this->get_settings();
                                     
             $button = new Element_Button( [ 'fields' => $fields ]  ); // set fields from Constructor

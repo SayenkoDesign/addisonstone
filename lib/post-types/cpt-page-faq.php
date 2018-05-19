@@ -20,7 +20,7 @@ class CPT_PAGE_FAQ extends CPT_Core {
         parent::__construct(
         
         	array(
-				__( 'FAQ', self::TEXTDOMAIN ), // Singular
+				__( 'PB FAQ', self::TEXTDOMAIN ), // Singular
 				__( 'Page Builder FAQs', self::TEXTDOMAIN ), // Plural
 				self::POST_TYPE // Registered name/slug
 			),

@@ -52,6 +52,10 @@ if( ! class_exists( 'Content_Section' ) ) {
                     
                     $element = $field;
                     
+                    // Header
+                    $header = new Element_Header( [ 'fields' => $element ]  ); // set fields from Constructor
+                    $column->add_child( $header );
+                    
                     // Editor
                     $editor = new Element_Editor( [ 'fields' => $element ]  ); // set fields from Constructor
                     $column->add_child( $editor );

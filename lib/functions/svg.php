@@ -4,18 +4,7 @@ function get_svg( $type = '' ) {
 	
 	$svgs = array(  
     
-        'wave' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 29">
-          <defs>
-            <path id="a" d="M0 0h1440v29H0z"/>
-          </defs>
-          <clipPath id="b">
-            <use overflow="visible" xlink:href="#a"/>
-          </clipPath>
-          <g clip-path="url(#b)" transform="matrix(-1 0 0 -1 1731 36)">
-            <path fill="#91B55E" d="M662 17c465 17 797 11 1074-10 53-4 53 3 0 21H233c11-17 154-21 429-11z"/>
-            <path fill="#5FA4DA" d="M235 9c469 27 328 3 681 9 234 4 508 6 821 6v12H235C-78 0-78-9 235 9z"/>
-          </g>
-        </svg>',
+        'wave' => '<svg height="29" viewBox="0 0 1440 29" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="matrix(-1 0 0 -1 1731 36)"><path d="m662.37754 17.033996c464.82927 17.4028021 797.06843 11.466004 1073.26913-9.88837834 53.65656-4.14844252 53.80403 2.96968494.44243 21.35438234h-1502.800964c10.379307-17.9652322 153.409108-21.78723357 429.089404-11.466004z" fill="#91b55e"/><path d="m234.594425 9c469.188851 27 328.890791 3.3870362 680.948685 9 234.62459 3.7406897 508.39948 5.6110345 821.32469 5.6110345v12.3889655h-1502.273375c-312.7925668-36-312.7925668-45 0-27z" fill="#5fa4da"/></g></svg>',
     
         'curve-top' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 49">
           <path fill="#eff3f1" fill-rule="evenodd" d="M1440 25V0c-355 29-595 44-720 44S355 29 0 0v49h1440z" transform=""/>
@@ -40,41 +29,9 @@ function get_svg( $type = '' ) {
           </g>
         </svg>',
         
-        'arrow-left' => '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 46 46">
-  <desc>
-    Created with Sketch.
-  </desc>
-  <defs>
-    <path id="a" d="M0 0v46h46V0H0z"/>
-  </defs>
-  <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" transform="translate(-230.000000, -230.000000) translate(230.000000, 230.000000) translate(23.000000, 23.000000) rotate(-180.000000) translate(-23.000000, -23.000000)">
-    <mask id="b" fill="white">
-      <use xlink:href="#a"/>
-    </mask>
-    <g/>
-    <path fill="#335D94" d="M23 46a23 23 0 1 0 0-46 23 23 0 0 0 0 46zm0-44a21 21 0 1 1 0 42 21 21 0 0 1 0-42z" mask="url(#b)"/>
-    <path fill="#5FA4DA" d="M26 30a1 1 0 0 0 1 0l7-7a1 1 0 0 0 0-1l-7-7h-1v1l6 7-6 6v1z"/>
-    <path stroke="#5FA4DA" stroke-linecap="square" stroke-width="3" d="M31 23H13"/>
-  </g>
-</svg>',
+        'arrow-left' => '<svg height="43" viewBox="0 0 25 43" width="25" xmlns="http://www.w3.org/2000/svg"><path d="m.77712337 42.2596042c.50463635.4847678 1.19585535.7403958 1.85985054.7403958s1.3538862-.255628 1.85819055-.7403958l19.73460114-18.9688118c.5043043-.4847678.7702344-1.12304.7702344-1.7874814 0-.6631648-.2659301-1.301437-.7702344-1.7878004l-19.73460114-18.96849276c-1.0361645-.99602379-2.68187659-.99602379-3.71804109 0s-1.0361645 2.57798146 0 3.57400525l17.87475063 17.18228791-17.87475063 17.182288c-1.00894069.9960238-1.00894069 2.6041506 0 3.5740052z" fill="#5fa4da" fill-rule="evenodd" transform="matrix(-1 0 0 -1 25 43)"/></svg>',
         
-        'arrow-right' => '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 46 46">
-  <desc>
-    Created with Sketch.
-  </desc>
-  <defs>
-    <path id="a" d="M0 0v46h46V0H0z"/>
-  </defs>
-  <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" transform="translate(-1163.000000, -230.000000) translate(230.000000, 230.000000) translate(933.000000, 0.000000)">
-    <mask id="b" fill="white">
-      <use xlink:href="#a"/>
-    </mask>
-    <g/>
-    <path fill="#335D94" d="M23 46a23 23 0 1 0 0-46 23 23 0 0 0 0 46zm0-44a21 21 0 1 1 0 42 21 21 0 0 1 0-42z" mask="url(#b)"/>
-    <path fill="#5FA4DA" d="M26 30a1 1 0 0 0 1 0l7-7a1 1 0 0 0 0-1l-7-7h-1v1l6 7-6 6v1z"/>
-    <path stroke="#5FA4DA" stroke-linecap="square" stroke-width="3" d="M31 23H13"/>
-  </g>
-</svg>',
+        'arrow-right' => '<svg height="43" viewBox="0 0 25 43" width="25" xmlns="http://www.w3.org/2000/svg"><path d="m.77712337 42.2596042c.50463635.4847678 1.19585535.7403958 1.85985054.7403958s1.3538862-.255628 1.85819055-.7403958l19.73460114-18.9688118c.5043043-.4847678.7702344-1.12304.7702344-1.7874814 0-.6631648-.2659301-1.301437-.7702344-1.7878004l-19.73460114-18.96849276c-1.0361645-.99602379-2.68187659-.99602379-3.71804109 0s-1.0361645 2.57798146 0 3.57400525l17.87475063 17.18228791-17.87475063 17.182288c-1.00894069.9960238-1.00894069 2.6041506 0 3.5740052z" fill="#5fa4da" fill-rule="evenodd" transform=""/></svg>',
         
         // social icons https://codepen.io/ruandre/pen/howFi
 	

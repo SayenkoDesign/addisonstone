@@ -54,7 +54,7 @@
 
     // include_once( 'functions/addtoany.php' );
     
-    // include_once( 'functions/facetwp.php' );
+    include_once( 'functions/treatment.php' );
     
     include_once( 'functions/case-study.php' );
 

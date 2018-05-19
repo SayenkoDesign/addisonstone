@@ -31,8 +31,17 @@ get_template_part( 'template-parts/section', 'footer-cta' );
                 printf( '<div class="widget"><a href="%s">%s</a></div>', $phone_number, $phone );
             }
             
-            if( is_active_sidebar( 'footer-1') ){
-                dynamic_sidebar( 'footer-1' );
+            $locations = get_field( 'locations', 'options' );
+            
+            if( !empty( $locations ) ) {
+                
+                $fa = new Foundation_Accordion( array( 'data' => array( 'data-accordion' => 'true', 'data-allow-all-closed' => 'true' ) ) );
+                
+                foreach( $locations as $location ) {
+                    $fa->add_item( $location['heading'], $location['details'] );
+                }
+                
+                printf( '<div class="widget">%s</div>',  $fa->get_accordion() );
             }
             ?>
             </div>

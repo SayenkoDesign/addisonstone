@@ -1,5 +1,4 @@
 <?php
-
 get_header(); ?>
 
 <?php
@@ -37,7 +36,7 @@ if( ! class_exists( 'Hero_Section' ) ) {
             
             $heading  = _s_format_string( $heading, 'h1' );
                
-            return sprintf( '<div class="row align-middle"><div class="column"><div class="caption text-center">%s</div></div></div>', $heading );
+            return sprintf( '<div class="row align-middle"><div class="column"><div class="caption">%s</div></div></div>', $heading );
         }
     }
 }
@@ -47,23 +46,31 @@ new Hero_Section;
 
 <div id="primary" class="content-area">
 
-	<main id="main" class="site-main" role="main">    
-     
 	<?php
-    // Previous/Next buttons
-    previous_next();
-    function previous_next() {
-        $previous = sprintf( '<img src="%sarrow-left.png" width="46" height="46" /><span class="%s"></span>', 
-                                         trailingslashit( THEME_IMG ), __( 'Previous Post', '_s') );
-                    
-        $next = sprintf( '<img src="%sarrow-right.png" width="46" height="46" /><span class="%s"></span>', 
-                             trailingslashit( THEME_IMG ), __( 'Next Post', '_s') );
-        echo '<div class="column row">';
-        the_post_navigation( array( 'prev_text' => $previous, 'next_text' => $next ) );   
-        echo '</div>';
+    // breadcrumbs
+    
+    breadcrumbs();
+    function breadcrumbs() {
+        $treatments_ID = 425;
+        $term = _s_get_treatment_term();
+        $title = get_the_title();  
+                
+        $breadcrumbs = [];
+        
+        $breadcrumbs[] = sprintf( '<a href="%s">%s</a>', get_permalink( $treatments_ID ), get_the_title( $treatments_ID ) ); 
+        
+        $breadcrumbs[] = sprintf( '<a href="%s">%s</a>', get_term_link( $term ), $term->name ); 
+        
+        $breadcrumbs[] = sprintf( '%s', get_the_title() ); 
+        
+        $out = sprintf( '%s', join( '<span> > </span>', $breadcrumbs ) );
+        
+        printf( '<div class="breadcrumbs"><div class="column row">%s</div></div>', $out );
     }
+    ?>
     
-    
+    <main id="main" class="site-main" role="main">
+	<?php    
  	page_builder();
 	function page_builder() {
 	
@@ -82,6 +89,11 @@ new Hero_Section;
                 			
 				$row_layout = str_replace( '_section', '', get_row_layout() );
                 
+                // dissalow certain sections
+                if( in_array( $row_layout, array( 'projects' ) ) ) {
+                    continue;
+                }
+                
                 // Use custom template part function so we can pass data
                 _s_get_template_part( 'template-parts/section', $row_layout, array( 'data' => $data ) );
   					
@@ -94,7 +106,6 @@ new Hero_Section;
 	}
 		
 	?>
-    
 	</main>
 
 

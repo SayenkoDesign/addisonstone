@@ -42,8 +42,12 @@ class Element_Header extends Element_Base {
         $subheading     = _s_format_string( $this->get_fields( 'subheading' ), 'h4' );
         $description    = _s_format_string( $this->get_fields( 'description' ), 'p' );
         
-        $this->add_render_attribute( 'wrapper', 'class', 'column' );
-        $this->add_render_attribute( 'wrapper', 'class', 'row' );
+        if( empty( $heading ) ) {
+            return;
+        }
+        
+        // $this->add_render_attribute( 'wrapper', 'class', 'column' );
+        // $this->add_render_attribute( 'wrapper', 'class', 'row' );
         $this->add_render_attribute( 'wrapper', 'class', 'header' );
                                         
         return sprintf( '<header %s>%s%s%s</header>', $this->get_render_attribute_string( 'wrapper' ), $heading, $subheading, $description );

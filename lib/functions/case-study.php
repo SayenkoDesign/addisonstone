@@ -3,7 +3,7 @@
 function _s_case_study_template_redirect( $template ) {
     if ( is_tax( 'case_study_cat' ) ) {
 		$template_found = locate_template( 'archive-case_study.php' );
-        
+                
         if( !empty( $template_found ) ) {
             $template = $template_found;
         }
@@ -33,7 +33,7 @@ function case_study_filters() {
 	<!-- Categories Filter -->
 	<div class="filter-button-group">
         <div class="wrap">
-		<button data-filter="*"><?php _e('All', '_s'); ?></button>
+		<button data-filter="*" <?php echo ( is_post_type_archive( 'case_study' ) ) ? 'class="active"' : '' ;?>><?php _e('All', '_s'); ?></button>
 		<?php 
         foreach ( $terms as $term ) : 
 		    printf( '<button data-filter=".%s">%s</button>', sanitize_title( $term->name ), $term->name );
@@ -44,6 +44,42 @@ function case_study_filters() {
 	<?php
 	
 }
+
+
+function case_study_links() {
+
+	
+	$taxonomies = array( 
+	    'case_study_cat',
+	);
+
+	$args = array(
+	    'orderby'           => 'id', 
+	    'order'             => 'ASC',
+	    'hide_empty'        => true
+	); 
+
+	$terms = get_terms( $taxonomies, $args );
+	
+	?>
+	
+	<!-- Categories Filter -->
+	<div class="filter-button-group">
+        <div class="wrap">
+		<?php printf( '<a href="%s">%s</a>', get_post_type_archive_link( 'case_study' ), __('All', '_s') ); ?>
+		<?php 
+        foreach ( $terms as $term ) : 
+            $queried_object = get_queried_object () ;
+            $active = ( $queried_object == $term ) ? 'active' : '' ;
+		    printf( '<a href="%s" class="%s">%s</a>', get_term_link( $term ), $active, $term->name );
+        endforeach;
+		?>
+		</div>	
+	</div>
+	<?php
+	
+}
+
 
 function _case_study_item( $index = 0 ) {
     global $post;

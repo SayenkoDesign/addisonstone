@@ -1,0 +1,68 @@
+// FAQ
+
+.page-template-faq {
+    
+    .section.default {
+        margin-bottom: 0!important;   
+    }
+    
+    .site-main {
+        padding: 24px 0 45px;
+    }
+    
+    .caption {
+        text-align: center;   
+    }
+ 
+    .filter-button-group {
+        text-align: center; 
+        margin-bottom: 30px;  
+        
+        .wrap {
+            display: inline-block; 
+            border-top: 1px solid #ececec;  
+            border-bottom: 1px solid #ececec; 
+            margin: 0 -5px;
+        }
+        
+        button {
+            border-top: 3px solid transparent;
+            color: #4A4A4A;   
+            cursor: pointer;
+            margin: 0 5px;
+            padding: 15px 20px;
+            
+            &.active {
+                border-color: $green;   
+            }
+        }
+    }
+    
+    
+    .accordion-title {
+        border: none!important;
+        background: $light-gray;
+        margin-bottom: 10px;
+        
+        &:before {
+            transform: translateY(-50%); 
+            margin-top: 0;  
+        }
+    }
+    
+    .accordion-content {
+        background-color: transparent;  
+        border: none!important; 
+    }
+    
+}
+
+
+.element-faq {
+ 
+    .accordion-title:before {
+        transform: translateY(-50%);
+        margin-top: 0;   
+    }
+    
+}

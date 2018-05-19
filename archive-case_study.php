@@ -69,7 +69,13 @@ new Hero_Section;
             if ( have_posts() ) : ?>
             
                <?php
-               case_study_filters();
+               if( is_tax() ) {
+                   case_study_links();
+               }
+               else {
+                   case_study_filters();
+               }
+               
                ?>
     
                <div class="masonry-layout">

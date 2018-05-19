@@ -45,7 +45,7 @@ if( ! class_exists( 'Hero_Section' ) ) {
         
         public function after_render() {
         
-            $wave = sprintf( '<div class="wave">%s</div>', '' );
+            $wave = sprintf( '<div class="wave">%s</div>', get_svg( 'wave' ) );
                 
             return sprintf( '</div>%s</section>', $wave );
         }

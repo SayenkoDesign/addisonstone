@@ -25,8 +25,8 @@ class CPT_FAQ extends CPT_Core {
 				self::POST_TYPE // Registered name/slug
 			),
 			array( 
-				'public'              => false,
-				'publicly_queryable'  => false,
+				'public'              => true,
+				'publicly_queryable'  => true,
 				'show_ui'             => true,
 				'query_var'           => true,
 				'capability_type'     => 'post',

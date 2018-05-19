@@ -1,7 +1,55 @@
 // Case Study
 
 .single-case_study {
- 
+    
+    .post-navigation {
+        
+        padding: 25px 0;
+     
+        .nav-links {
+            
+            @include clearfix;
+            
+            a {
+                display: inline-block;
+                width: 46px;
+                height: 46px;
+                
+                &:hover {
+                   opacity: .8;   
+                }
+                
+                svg {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);   
+                }
+            }
+         
+            .nav-previous {
+                float: left;
+                width: 50%;
+                
+                svg {
+                    margin-left: -2px;   
+                }
+                
+            }
+            
+            .nav-next {
+                float: right;
+                width: 50%;
+                text-align: right;
+                
+                svg {
+                    margin-left: 2px;   
+                }
+            }
+            
+        }
+        
+    }
     
     
 }

@@ -6,7 +6,29 @@
     margin-bottom: 45px;
     
     header {
-        text-align: center;   
+        text-align: center; 
+        span {
+         overflow: hidden;
+         text-align: center;
+        }
+        span:before,
+        span:after {
+         background-color: $light-blue;
+         content: "";
+         display: inline-block;
+         height: 1px;
+         position: relative;
+         vertical-align: middle;
+         width: 50%;
+        }
+        span:before {
+         right: 0.5em;
+         margin-left: -50%;
+        }
+        span:after {
+         left: 0.5em;
+         margin-right: -50%;
+        }
     }
 
     .royalSlider {
@@ -51,6 +73,11 @@
             font-size: 15px;  
             font-family: Montserrat; 
             line-height: 21px;
+        }
+        
+        span {
+            font-weight: 400;
+            color: $light-blue;   
         }
                 
         @include breakpoint(large) {

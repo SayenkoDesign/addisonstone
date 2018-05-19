@@ -14,6 +14,7 @@ get_template_part( 'template-parts/section', 'hero' );
 
 	<main id="main" class="site-main" role="main">
 	<?php
+    faq_filters();
     function faq_filters() {
 	
         $taxonomies = array( 
@@ -33,7 +34,7 @@ get_template_part( 'template-parts/section', 'hero' );
         <!-- Categories Filter -->
         <div class="filter-button-group">
             <div class="wrap">
-            <button data-filter="*"><?php _e('All', '_s'); ?></button>
+            <button data-filter="*" class="active"><?php _e('All', '_s'); ?></button>
             <?php 
             foreach ( $terms as $term ) : 
                 printf( '<button data-filter=".%s">%s</button>', sanitize_title( $term->name ), $term->name );
@@ -66,37 +67,25 @@ get_template_part( 'template-parts/section', 'hero' );
         _s_structural_wrap( 'open' );
 		
 		print( '<div class="column row">' );
-		
-		$post_type = 'program';
-        $taxonomy  = 'program_cat';
-        
-        $terms = get_terms( $taxonomy );
-    
-        foreach ( $terms as $term_key => $term ) :
-            
+		            
             $loop = new WP_Query( array(
-                'post_type' => $post_type,
+                'post_type' => 'faq',
                 'order' => 'ASC',
                 'orderby' => 'menu_order title',
                 'posts_per_page' => -1,
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => $taxonomy,
-                        'field' => 'slug',
-                        'terms' => array( $term->slug ),
-                        'operator' => 'IN'
-                    )
-                )
+              
             ) );
             
             
             if ( $loop->have_posts() ) : 
             
-                printf( '<h2>%s</h2>', $term->name );
-                
+                $fa = new Foundation_Accordion;
+                            
                 while ( $loop->have_posts() ) : $loop->the_post(); 
                 
-                    $terms = wp_get_post_terms( get_the_ID(), 'case_study_cat' );
+                    $filters = '';
+                    
+                    $terms = wp_get_post_terms( get_the_ID(), 'faq_cat' );
     
                     $term_filters = [];
                     
@@ -105,15 +94,20 @@ get_template_part( 'template-parts/section', 'hero' );
                             $term_filters[] = sanitize_title( $term->name );
                         }
                     }
-                      
-                    the_title( '<h2>', '</h2>' );
+                    
+                    $filters = join( ' ', $term_filters );
+                                          
+                    $fa->add_item( get_the_title(), apply_filters( 'the_content', get_the_content() ), false, array( 'accordion_title_classes' => $filters ) );
                       
                 endwhile;
+                
+                echo $fa->get_accordion();
+                
             endif;
             wp_reset_postdata();
             
             
-        endforeach;
+            
 		print( '</div>' );
         
 		_s_structural_wrap( 'close' );

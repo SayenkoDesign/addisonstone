@@ -1,0 +1,47 @@
+// Simgle Treatment
+
+.single-treatment {
+    
+    .section-hero .caption {
+        text-align: center;   
+    }
+    
+    .breadcrumbs {
+        padding: 15px 0;
+        text-align: center;
+        display: none;
+        
+        @include breakpoint(large) {
+            display: block;
+        }
+        
+        span {
+            padding: 0 6px;   
+        }
+    }
+    
+    .site-main > .section-2 {
+        margin-top: 0;   
+    }
+ 
+    section {
+     
+        .column.large-12 {
+            
+            .element-faq {
+                
+                h2 {
+                    text-align: center;   
+                }
+                
+                .accordion {
+                    max-width: 660px;
+                    margin: 0 auto;  
+                }
+            }
+            
+        }
+        
+    }
+    
+}

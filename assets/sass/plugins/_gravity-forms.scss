@@ -86,7 +86,7 @@ li.gfield.gfield_error {
 
 // Theme Specific
 
-.gform_wrapper {
+body .gform_wrapper {
 	margin-top: 4px!important;	
 	
 	ul {
@@ -153,7 +153,14 @@ li.gfield.gfield_error {
 	.gform_footer {
 		
 		input {
-			@include button;
+			font-family: 'Montserrat', sans-serif!important;
+            font-size: 12px!important;
+            font-weight: 700!important;
+            letter-spacing: 1px!important;
+            line-height: 20px!important;
+            margin: 0 auto;
+            max-width: 280px!important;
+            min-width: 185px!important;
             background-color: $green;
             border-color: $green;
             color: $white;

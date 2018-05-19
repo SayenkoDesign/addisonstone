@@ -28,25 +28,6 @@ button:focus {
 }
 
 
-.page-template-default {
- 
-    h1 {
-        
-        margin-bottom: 10px;  
-                
-        &:before {
-            content: '';
-            display: block;
-            width: 54px;
-            height: 4px;
-            background: $green;
-            margin: 15px 0 0;   
-        }
-       
-    }
-    
-}
-
 
 
 // custom styles

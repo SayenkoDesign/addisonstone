@@ -48,10 +48,11 @@ if( ! class_exists( 'Testimonial_Section' ) ) {
             $settings = $this->get_settings();
                         
             $heading = _s_format_string( $fields['heading'], 'h2' );
-            if( !empty( $heading ) ) {
-                $heading = sprintf( '<header class="column row header">%s</header>', $heading );
+            if( empty( $heading ) ) {
+                $heading = sprintf( '<span><img src="%sicons/quote.png" /></span>', trailingslashit( THEME_IMG ) );
             }
             
+            $heading = sprintf( '<header class="column row header">%s</header>', $heading );
             
             $slides = '';
             
@@ -76,7 +77,6 @@ if( ! class_exists( 'Testimonial_Section' ) ) {
                         $this->add_render_attribute( 'anchor', 'class', 'button-link', true );
                     }
                     else {
-                        $this->add_render_attribute( 'anchor', 'href', '', true );
                         $this->add_render_attribute( 'anchor', 'class', '', true );   
                     }
                     $cite = sprintf( '<%1$s %2$s>%3$s</%1$s>', 

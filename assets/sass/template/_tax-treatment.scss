@@ -1,0 +1,44 @@
+// Tax Treatment
+
+.tax-treatment_cat {
+    
+    article {
+        padding: 45px 0;  
+        
+        @include breakpoint(large) {
+        
+            .column-block {
+                margin-bottom: 0;   
+            }
+                        
+            &:nth-child(odd) {
+                .column:first-child {
+                    padding-left: rem-calc(map-get($grid-column-gutter, large)*1);  
+                }
+                
+                .column:last-child {
+                    padding-right: rem-calc(map-get($grid-column-gutter, large)*1);  
+                }
+            }
+            
+            &:nth-child(even) {
+                .column:first-child {
+                    padding-right: rem-calc(map-get($grid-column-gutter, large)*1);  
+                }
+                
+                .column:last-child {
+                    padding-left: rem-calc(map-get($grid-column-gutter, large)*1);  
+                }
+            }
+        }
+        
+        &:nth-child(even) {
+            background-color: $light-gray;
+        }
+    }
+    
+    .section-footer-cta {
+        padding-top: 45px;   
+    }
+    
+}

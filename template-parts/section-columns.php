@@ -58,6 +58,10 @@ if( ! class_exists( 'Column_Section' ) ) {
                 
                     // Elements: button, editor, photo, slideshow, video, faq, menu                      
                     
+                    // Header
+                    $header = new Element_Header( [ 'fields' => $element ]  ); // set fields from Constructor
+                    $column->add_child( $header );
+                    
                     // Editor
                     $editor = new Element_Editor( [ 'fields' => $element ]  ); // set fields from Constructor
                     $column->add_child( $editor );

@@ -1,0 +1,86 @@
+/* CSS Document */
+
+.template-glossary {
+
+	.section-glossary-terms {
+        
+        .anchor {
+            height: 140px;
+            margin-top: -140px;
+            visibility: hidden;     
+        }
+		
+		.alphabet {
+			@include list-reset;
+			margin: 45px auto 0;
+ 			
+			li {
+				display: inline-block;	
+				margin-right: 8px;
+				padding: 2px;
+				vertical-align: middle;
+				line-height: 1;
+				margin-bottom: 0;
+				
+				&:last-child {
+					display: none;	
+				}
+				
+				a {
+					text-decoration: underline;	
+					padding: 0 2px;
+				}
+				
+				span {
+					display: inline-block;
+					width: 1px;
+					height: 15px;
+					background: $dark-gray;	
+					vertical-align: middle;
+					position: relative;
+					top: -2px;
+				}
+			}
+		}
+		
+		.glossary-term {
+			
+			padding: 90px 0 50px;
+			
+			h3 {
+				font-weight: 700;	
+				position: relative;
+				padding-right: 30px;
+				&:after {
+					content: '';
+					width: calc(100% - 60px);
+					height: 1px;
+					background: $black;
+					position: absolute;
+					top: 50%;
+					right: 0;
+					transform: translateY(-50%);
+				}
+			}
+		}
+		
+		.glossary-definition {
+			margin-bottom: 30px;	
+		}
+		
+		@media #{$large-up} {
+      		h4 {
+				width: 300px;
+				float: left;
+				margin-right: 30px;
+			}
+			
+			.entry-content {
+				overflow: hidden;	
+			}
+			
+			
+		}
+	}
+	
+}

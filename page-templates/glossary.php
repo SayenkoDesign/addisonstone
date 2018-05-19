@@ -18,9 +18,8 @@ get_template_part( 'template-parts/section', 'hero' );
 	// Glossary
 	section_glossary();
 	function section_glossary() {
-		
-		$heading = '<h2>Terms & Definitions</h2>';
-		
+        
+        $permalink = get_permalink();
 		
 		$terms = get_terms( array(
 			'taxonomy' => 'letter_cat',
@@ -51,8 +50,15 @@ get_template_part( 'template-parts/section', 'hero' );
 					$gt = strtolower( $glossary_terms[0]->name );
 					$title = sprintf( '<h4>%s</h4>', get_the_title() );
 					$content = sprintf( '<div class="entry-content">%s</div>', apply_filters( 'pb_the_content', get_the_content() ) );
+                    
+                    $link = '';
+                    
+                    if( is_user_logged_in() ) {
+                        $url = sprintf( '%s#%s', $permalink, sanitize_title( $title ) );
+                        $link = sprintf( '<input type="text" value="%s">', $url );
+                    }
 					 
-					$letters[$gt][] = sprintf( '<div class="glossary-definition">%s%s</div>', $title, $content );
+					$letters[$gt][] = sprintf( '%s<div class="anchor" id="%s"></div><div class="glossary-definition">%s%s</div>', $link, sanitize_title( $title ), $title, $content );
 					 
 				 }
 	
@@ -85,7 +91,7 @@ get_template_part( 'template-parts/section', 'hero' );
 		$attr = array( 'class' => 'section section-glossary-terms' );
 		_s_section_open( $attr );
 		
-			printf( '<div class="column row"><div class="entry-content">%s%s</div></div>', $heading, $letter_links );
+			printf( '<div class="column row"><div class="entry-content">%s</div></div>', $letter_links );
 			
 			print( '<div class="column row">' );
 			

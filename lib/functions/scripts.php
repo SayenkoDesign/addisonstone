@@ -41,7 +41,7 @@ function _s_register_scripts() {
 add_action( 'wp_enqueue_scripts', '_s_load_scripts' );
 function _s_load_scripts() {
 
-		if( is_post_type_archive( 'case_study' ) || is_page_template( 'page-templates/faq' ) ) {
+		if( is_post_type_archive( 'case_study' ) || is_tax( 'case_study_cat' ) || is_page_template( 'page-templates/faq.php' ) ) {
             wp_enqueue_script( 'isotope');
         }
         

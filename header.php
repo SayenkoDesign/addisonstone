@@ -16,11 +16,12 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
-<link rel="apple-touch-icon" sizes="60x60" href="<?php echo THEME_FAVICONS;?>/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="76x76" href="<?php echo THEME_FAVICONS;?>/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="<?php echo THEME_FAVICONS;?>/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="<?php echo THEME_FAVICONS;?>/favicon-16x16.png">
-<link rel="manifest" href="<?php echo THEME_FAVICONS;?>/manifest.json">
-<link rel="mask-icon" href="<?php echo THEME_FAVICONS;?>/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="manifest" href="<?php echo THEME_FAVICONS;?>/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 <?php wp_head(); ?>
 </head>

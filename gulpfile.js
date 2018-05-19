@@ -158,7 +158,7 @@ gulp.task('foundation', function () {
 		paths.foundation + 'foundation.tabs.js',
 
 		paths.foundation + 'foundation.accordion.js',
- 		//paths.foundation + 'foundation.accordionMenu.js',
+ 		paths.foundation + 'foundation.accordionMenu.js',
         
         paths.foundation + 'foundation.zf.responsiveAccordionTabs.js',
 

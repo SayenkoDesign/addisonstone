@@ -171,6 +171,7 @@ class Element_Section extends Element_Base {
                 break;
                 case 'margin_top':
                 case 'margin_bottom':
+                $name = str_replace( '_', '-', $name );
                 $this->add_render_attribute( 'wrapper', 'style', sprintf( '%s:%spx;', $name, $value ) );
                 break;
                 case 'padding_top':

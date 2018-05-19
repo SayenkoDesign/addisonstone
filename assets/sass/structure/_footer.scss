@@ -3,11 +3,11 @@
 // --------------------------------------------------
 
 .footer-widgets {
-    background-color: $blue;
+    background-color: #24426A;
     border-top: 7px solid $green;
     position: relative;
     z-index: 2;
-    margin-top: 50px;
+    margin-top: 25px;
     padding: 45px 0 0;
    
     
@@ -53,6 +53,10 @@
         &:not(:last-child) {
             margin-bottom: 30px;   
         }
+        
+        img {
+            max-width: 170px!important;   
+        }
     }
     
     
@@ -81,6 +85,37 @@
                 padding: 5px 0;   
             }
         }
+        
+        .is-accordion-submenu-parent > a {
+            padding: 0 0 0 20px;
+            display: inline-block;
+            margin-bottom: 5px;
+            
+            &:after {
+                content: '+';
+                display: block;
+                border: none;
+                right: auto;
+                left: 0;
+                top: 50%;
+                margin-top: 0;
+                transform: translateY(-50%);
+                width: auto;
+                height: auto;
+                color: #fff;
+                font-size: 24px;
+            }
+        }
+        
+        .is-accordion-submenu-parent[aria-expanded=true]>a:after {
+            transform: translateY(-50%);
+            transform-origin: 0;
+            content: '-';
+        }
+        
+        .menu.nested {
+            margin-left: 20px;
+        }
     }
     
     
@@ -105,6 +140,51 @@
         }
     }
     
+    
+    
+    .widget {
+        
+        margin-bottom: 10px;
+     
+        .accordion {
+            background: transparent;
+        }
+        
+        .accordion-item {
+            margin-bottom: 0;    
+        }
+        
+        .accordion-title {
+            border: none;  
+            display: inline-block;
+            padding: 0 0 0 20px;
+            
+            &:focus,
+            &:hover {
+                background-color: transparent;
+            } 
+            
+            &:before {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: auto;
+                margin-top: 0;
+                transform: translateY(-50%);
+                color: #fff;
+                font-size: 24px;
+            }
+        }
+        
+        .accordion-content {
+            border: none;
+            background-color: transparent;   
+            padding: 15px 0;
+        }
+        
+    }
+    
+    
 }
 
 
@@ -113,7 +193,7 @@
 
 
 .site-footer {
-    background-color: $blue;
+    background-color: #24426A;
     
     .wrap {
         padding: 0 0 20px;   

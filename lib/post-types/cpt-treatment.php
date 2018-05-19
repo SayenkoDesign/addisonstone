@@ -37,7 +37,7 @@ class CPT_Treatment extends CPT_Core {
 				'show_in_nav_menus'   => true,
 				'exclude_from_search' => false,
 				//'rewrite'             => array( 'slug' => 'treatments' ),
-				'supports' => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+				'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions' ),
 			)
 
         );

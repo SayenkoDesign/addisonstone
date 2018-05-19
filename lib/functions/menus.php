@@ -51,20 +51,18 @@ add_filter('nav_menu_css_class', 'clear_nav_menu_item_class', 10, 3);
 function set_current_menu_class($classes) {
 	global $post;
 	
-	/*
-	if( _s_is_page_template_name( 'find-an-agent' ) || is_post_type_archive( 'agent' ) || is_singular( 'agent' ) ) {
+	if( is_tax( 'treatment_cat' ) || is_singular( 'treatment' ) ) {
 		
 		$classes = array_filter($classes, "remove_parent_classes");
 		
-		if ( in_array('menu-item-206', $classes ) )
+		if ( in_array('menu-item-428', $classes ) )
 			$classes[] = 'current-menu-item';
 	}
-	*/
 			
 	return $classes;
 }
 
-//add_filter('nav_menu_css_class', 'set_current_menu_class',1,2); 
+add_filter('nav_menu_css_class', 'set_current_menu_class',1,2); 
 
 
 // check for current page classes, return false if they exist.

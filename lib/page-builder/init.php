@@ -1,6 +1,7 @@
 <?php
 include_once( 'includes/functions/filters.php' );
 include_once( 'includes/functions/markup.php' );
+include_once( 'includes/functions/depreciated.php' );
 include_once( 'includes/functions/format.php' );
 include_once( 'includes/functions/theme.php' );
 

@@ -2,52 +2,65 @@
 
 .template-contact {
     
-    .site-main {
-        padding-top: 60px;   
+    section.default {
+       background: $blue;
+        margin-top: 0;
+        min-height: 400px; 
+        padding-bottom: 60px;
+        
+        @include breakpoint(large) {
+            min-height: 700px; 
+            position: relative; 
+            padding-bottom: 0;
+        }
+        
+        .column:last-child {
+             padding-top: 45px;
+             padding-bottom: 45px;  
+        }
+        
+        @include breakpoint(large) {
+                                            
+            .column:last-child {
+                padding-left: rem-calc(map-get($grid-column-gutter, large)*1);  
+                padding-right: rem-calc(map-get($grid-column-gutter, large)*1); 
+            }
+        }
+        
+        .wpgmza-filter-widgets {
+            display: none;   
+        }
+        
+        
+        .map-container {
+            
+            height: 400px;
+            
+            @include breakpoint(large) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                $margin: rem-calc(map-get($grid-column-gutter, large)*1);
+                width: calc(50% - #{$margin}); 
+                height: 100%;
+            }
+
+        }
+        
+        
+        h1,
+        h4 {
+            color: #fff;
+            text-transform: none;   
+        }
+        
+        .gform_confirmation_message {
+            color: #fff;   
+        }
+        
     }
     
     
-	.site-main .section {
- 		
-		.entry-content > *:last-child {
-			margin-bottom: 0;	
-		}
-		
-		.columns {
-			
-			margin-bottom: 50px;
-			
-			&.large-4 {
-                
-                > * {
-                    text-align: center;
-                
-                    @media #{$large-up} {
-                        text-align: left;
-                    }     
-                }
-            }
-            
-            .gform_wrapper {
-                
-                padding-top: 30px;
-                 
-                .gform_title {
-                    color: $navy!important;
-                    margin-bottom: 20px!important;
-                    font-size: 30px!important;
-                    font-weight: 400!important;
-                }
-            }
-			
-			.gform_wrapper {
-				margin-top: -24px!important;
-				
-				.gform_footer {
-					text-align: center;	
-				}
-			}
-		}
-	}
 	
 }

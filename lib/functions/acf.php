@@ -34,6 +34,17 @@ if( function_exists('acf_add_options_sub_page') ) {
  		'redirect' 	=> false,
         'autoload' => true,
 	));
+    
+    acf_add_options_sub_page(array(
+		'page_title' 	=> 'Footer',
+		'menu_title' 	=> 'Footer',
+        'menu_slug' 	=> 'theme-settings-footer',
+        'parent' 		=> 'theme-settings',
+		'capability' => 'edit_posts',
+ 		'redirect' 	=> false,
+        'autoload' => true,
+	));
+
 
 }
 

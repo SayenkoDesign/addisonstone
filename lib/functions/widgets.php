@@ -1,4 +1,35 @@
 <?php
+// make widgets menu for treatments an accordion
+
+function custom_nav_args( $args ) {
+    $menu = $args['menu'];
+    
+    if( ! is_object( $menu ) ) {
+        return $args;
+    }
+    
+    if( 4 == $menu->term_id )
+    {
+        $new_args = array( 
+            'menu_class' => 'vertical menu',
+            'before' => '',
+            'after' => '',
+            'link_before' => '',
+            'link_after' => '',
+            'items_wrap' => '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>'
+        );
+        
+        $new_args = wp_parse_args( $new_args, $args );
+        
+        return $new_args;
+    }
+    
+    return $args;
+}
+add_filter('wp_nav_menu_args', 'custom_nav_args');
+
+
+
 // Example: change sidebar params
 
 function _s_widget_display_callback($instance, $widget, $args) {
